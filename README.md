@@ -33,17 +33,8 @@ To install **VPTComm**, clone this repository and follow the steps below:
 
 2. Build the library and tests:
     ```bash
-    make
-    ```
-
-3. Optionally, install the library to your system:
-    ```bash
-    sudo make install
-    ```
-
-4. Clean up the build:
-    ```bash
-    make clean
+    mkdir build && cd build && cmake -DCMAKE_INSTALL_PREFIX=/path/to/dir ..
+    make && make run_test && make install
     ```
 
 ## How to Use
@@ -53,6 +44,7 @@ To install **VPTComm**, clone this repository and follow the steps below:
     ```c
     #include "vptcomm.h"
     ```
+**Important note:** the current data type is set to "double", you should change it according to your application. Modify lines 13 & 16 in vptcomm.h
 
 2. **Link the library during compilation**:
     When building your application, link to the **vptcomm** library:
@@ -66,11 +58,6 @@ To install **VPTComm**, clone this repository and follow the steps below:
     mpirun -np 8 ./my_application
     ```
 
-4. **Testing the library**:
-    To run the built-in tests:
-    ```bash
-    make test
-    ```
 
 ## Developers
 
