@@ -27,7 +27,7 @@ To install **VPTComm**, clone this repository and follow the steps below:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/vptcomm.git
+    git clone https://github.com/nfabubaker/vptcomm.git
     cd vptcomm
     ```
 
