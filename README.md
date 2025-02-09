@@ -12,7 +12,7 @@ Written in plain C and dependent only on MPI, **VPTComm** provides a simple and 
 - **Store-and-Forward**: Minimizes communication by employing store-and-forward techniques.
 - **Compatibility**: Fully compatible with MPI, no additional dependencies are required.
 - **Low Latency**: Achieves logarithmic message reduction for improved performance.
-- **Tested**: Includes built-in tests to verify functionality and ensure reliable communication.
+- **VPT-aware Mapping**: Provides the option to customize the assignment the MPI Ranks to VPT nodes in order to reduce contention and total communication volume.
 
 ## Installation
 
