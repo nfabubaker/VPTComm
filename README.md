@@ -46,6 +46,36 @@ To install **VPTComm**, clone this repository and follow the steps below:
     ```
 **Important note:** the current data type is set to "double", you should change it according to your application. Modify lines 13 & 16 in vptcomm.h
 
+The library can be used as follows
+```c
+
+STFW_init(int _nInstances, unsigned char dual_enabled);
+/* This call initializes the VPTComm Library. It is usually called just after MPI_Init in your application.
+The _nInstances parameter tells the library how many P2P communication instances you would like to call in your application.
+The dual_enabled paramteter tells the library if there are dual P2P communication calls (such as in an Expand/Reduce scenario)*/
+.
+.
+.
+
+STFW_init_instance(int _instance_id, int vpt_ndims, int *vpt_dsizes, int npsend, int *sendlist, int nprecv, int *recvlist, int *ssend, vptcomm_real_t **sendp, int *srecv, vptcomm_real_t **recvp, int *topomap);
+/*This is the call that replaces your MPI_Send/Recv, MPI_Alltoall_v, or MPI_Neighbor_alltoallv calls.
+It has similar parameters: */
+.
+.
+.
+
+STFW_Comm(int _instance_id);
+/*The call starts the communication. If your application does not repeast the P2P communication more than once,
+this has to be called directly after the the STFW_init_instance call. If your application repeats the P2P communication pattern (even if the data change), then the STFW_init_instance can be called once, and the STFW_Comm can be called inside the repetition loop.*/
+.
+.
+.
+
+STFW_finalize();
+/*Finalizes the VPTComm usage, frees the allocated memory and distroys all relevant structs*/
+```
+
+
 2. **Link the library during compilation**:
     When building your application, link to the **vptcomm** library:
     ```bash
