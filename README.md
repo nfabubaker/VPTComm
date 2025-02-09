@@ -1,8 +1,8 @@
-# VPTComm
+<img src="https://drive.google.com/uc?export=view&id=1nF7gGV1YjqOp6mV7twIcH0_ES-KLd3TX" alt="logo" width="600" height="200">
 
 ## Overview
 
-**VPTComm** is a library that optimizes MPI point-to-point communication by reducing message counts using a k-ary n-cube virtual process topology and store-and-forward techniques. This library helps mitigate high latency in MPI applications by significantly reducing the number of messages exchanged between processes.
+**VPTComm** is a library that optimizes MPI point-to-point communication by reducing message counts using a k-ary n-cube **V**irtual **P**rocess **T**opology and store-and-forward techniques. This library helps mitigate high latency in MPI applications by significantly reducing the number of messages exchanged between processes.
 
 Written in plain C and dependent only on MPI, **VPTComm** provides a simple and efficient way to replace traditional point-to-point communication with a more optimized, low-latency alternative.
 
@@ -12,7 +12,7 @@ Written in plain C and dependent only on MPI, **VPTComm** provides a simple and 
 - **Store-and-Forward**: Minimizes communication by employing store-and-forward techniques.
 - **Compatibility**: Fully compatible with MPI, no additional dependencies are required.
 - **Low Latency**: Achieves logarithmic message reduction for improved performance.
-- **Tested**: Includes built-in tests to verify functionality and ensure reliable communication.
+- **VPT-aware Mapping**: Provides the option to customize the assignment the MPI Ranks to VPT nodes in order to reduce contention and total communication volume.
 
 ## Installation
 
