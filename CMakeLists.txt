@@ -4,6 +4,12 @@ cmake_minimum_required(VERSION 3.10)
 # Project name and version
 project(VPTComm VERSION 1.0)
 
+
+set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose the build type: Release or Debug" FORCE)
+
+set(CMAKE_C_FLAGS_RELEASE "-O3 -DNDEBUG")
+set(CMAKE_C_FLAGS_DEBUG "-g -O0 -DDEBUG -DNA_DBG -DD_SPEC_STFW")
+
 # Set the path for the include directory
 set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include)
 
